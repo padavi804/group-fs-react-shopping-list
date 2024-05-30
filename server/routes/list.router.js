@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool.js');
 
 router.get('/', (req, res) => {
-const sqlText = `SELECT * FROM shoppingList ORDER BY name, origin DESC;`;
+const sqlText = `SELECT * FROM "shoppingList";`;
 pool.query(sqlText)
     .then((result) =>{
         console.log(`Got stuff back from the database`, result);
@@ -29,3 +29,5 @@ router.post('/', (req, res)=> {
         res.sendStatus(500);
     })
 });
+
+module.exports = router;
