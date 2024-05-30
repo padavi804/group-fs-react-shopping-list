@@ -5,7 +5,7 @@ const pool = require('../modules/pool.js');
 router.get('/', (req, res) => {
 const sqlText = `SELECT * FROM "shoppingList";`;
 pool.query(sqlText)
-    .then((result) =>{
+    .then((result) => {
         console.log(`Got stuff back from the database`, result);
             res.send(result.rows);
     })

@@ -1,4 +1,4 @@
-//import React from 'react';
+// import React from 'react';
 import { useEffect, useState } from 'react';
 //import Header from '../Header/Header.jsx';
 import './App.css';
@@ -17,7 +17,8 @@ function App() {
             url: '/api/shoppingList'
         })
             .then((response) => {
-                console.log(response);
+                //console.log(response);
+                console.log(response.data);
                 setItemListArray(response.data);
             })
             .catch((error) => {
@@ -27,10 +28,10 @@ function App() {
     useEffect(fetchList, []);
 
     return (
-    
+
         <div className="App">
             <header className="banner-header">
-            <h1>My Shopping List</h1>
+                <h1>My Shopping List</h1>
             </header>
             <section className="add-item">
                 <div>
@@ -53,6 +54,12 @@ function App() {
                         <button>Save</button>
                     </form>
                 </div>
+            </section>
+            <section className="item-data">
+                <p>
+                    Here is the array:
+                    {JSON.stringify(itemListArray)}
+                </p>
             </section>
 
             <main>
