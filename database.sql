@@ -1,7 +1,7 @@
 -- Don't forget to add your create table SQL 
 -- It is also helpful to include some test data
 
-CREATE TABLE "shoppingList" (
+CREATE TABLE "shopping_list" (
 "id" SERIAL PRIMARY KEY,
 "name" varchar (80),
 "quantity" decimal,

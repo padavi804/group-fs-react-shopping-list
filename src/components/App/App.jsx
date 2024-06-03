@@ -63,8 +63,7 @@ function App() {
             </section>
 
             <main>
-                {/* <AddItem/>
-                <ShoppingList /> */}
+                
             </main>
         </div>
     );

@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const listRouter = require('./routes/list.router.js');
 const bodyParser = require('body-parser');
-const PORT = process.env.PORT || 5002;
+const PORT = process.env.PORT || 5001;
 
 /** ---------- MIDDLEWARE ---------- **/
 app.use(bodyParser.json());
