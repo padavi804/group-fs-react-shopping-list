@@ -1,9 +1,10 @@
-// import React from 'react';
+import React from 'react';
 import { useEffect, useState } from 'react';
-//import Header from '../Header/Header.jsx';
+import Header from '../Header/Header.jsx';
 import './App.css';
-//import AddItem from "./AddItem/AddItem.jsx";
-//import ShoppingList from "./ShoppingList/ShoppingList.jsx";
+import AddItem from "../AddItem/AddItem.jsx";
+import ShoppingList from "../ShoppingList/ShoppingList.jsx";
+import ShoppingItem from '../ShoppingItem/ShoppingItem.jsx';
 import axios from 'axios';
 function App() {
 
@@ -30,41 +31,9 @@ function App() {
     return (
 
         <div className="App">
-            <header className="banner-header">
-                <h1>My Shopping List</h1>
-            </header>
-            <section className="add-item">
-                <div>
-                    <h2>Add an Item</h2>
-                    <form>
-                        <div>
-                            <label htmlFor="name">Name</label>
-                            <input type="text" name="name" />
-                        </div>
-                        <div>
-                            <div>
-                                <label htmlFor="quantity">Quantity</label>
-                                <input type="text" name="quantity" />
-                            </div>
-                            <div>
-                                <label htmlFor="unit">Unit</label>
-                                <input type="text" name="unit" />
-                            </div>
-                        </div>
-                        <button>Save</button>
-                    </form>
-                </div>
-            </section>
-            <section className="item-data">
-                <p>
-                    Here is the array:
-                    {JSON.stringify(itemListArray)}
-                </p>
-            </section>
-
-            <main>
-                
-            </main>
+            <Header />
+            <AddItem addItem={AddItem} fetchList={fetchList}/>           
+            <ShoppingList itemListArray={itemListArray} fetchList={fetchList} />
         </div>
     );
 }
