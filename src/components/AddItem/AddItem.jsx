@@ -4,7 +4,7 @@ import axios from 'axios';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-
+import Button from '@mui/material/Button';
 
 function AddItem({fetchList}){
 
@@ -62,7 +62,7 @@ const createItem = (event) => {
     <input type="text"  />  
         </div>
     </div> */}
-    <button type="submit">Add to List</button>
+    <Button type="submit"variant="outlined">Add to List</Button>
     </form>  
  </div>   
 )}
