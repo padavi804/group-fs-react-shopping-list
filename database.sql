@@ -9,5 +9,5 @@ CREATE TABLE "shopping_list" (
 "purchased" boolean
 );
 
-INSERT INTO "shoppingList" ("name", "quantity", "unit", "purchased")
+INSERT INTO "shopping_list" ("name", "quantity", "unit", "purchased")
 VALUES ('apples', 5.5, 'lbs', false), ('bread', 1, 'loaf', false), ('milk', 1, 'gallon', false);
