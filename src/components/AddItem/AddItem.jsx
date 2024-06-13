@@ -1,6 +1,10 @@
-import React from 'react';
+// import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+
 
 function AddItem({fetchList}){
 
@@ -33,19 +37,31 @@ const createItem = (event) => {
   <h2>Add an Item</h2>
   <form onSubmit={createItem}>
     <div>
-    <label htmlFor="name">Name</label> 
-    <input type="text"  name="name" onChange={(event) => setNewShoppingListItemName(event.target.value)} value={newShoppingListItemName} />   
+    <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
+      <TextField id="outlined-basic" label="Item" variant="filled" name="name" onChange={(event) => setNewShoppingListItemName(event.target.value)} value={newShoppingListItemName}/>
+      <TextField id="filled-basic" label="Quantity" variant="filled" name="quantity" onChange={(event) => setNewShoppingListItemQuantity(event.target.value)} value={newShoppingListItemQuantity}/>
+      <TextField id="standard-basic" label="Unit" variant="filled" name="unit" onChange={(event) => setNewShoppingListItemUnit(event.target.value)} value={newShoppingListItemUnit}/>
+    </Box>
+    {/* <label htmlFor="name">Name</label> 
+    <input type="text"   />    */}
     </div>
-    <div>
+    {/* <div>
         <div>
         <label htmlFor="quantity">Quantity</label> 
-    <input type="text"  name="quantity" onChange={(event) => setNewShoppingListItemQuantity(event.target.value)} value={newShoppingListItemQuantity}/>  
+    <input type="text"  />  
         </div>
         <div>
         <label htmlFor="unit">Unit</label> 
-    <input type="text"  name="unit" onChange={(event) => setNewShoppingListItemUnit(event.target.value)} value={newShoppingListItemUnit}/>  
+    <input type="text"  />  
         </div>
-    </div>
+    </div> */}
     <button type="submit">Add to List</button>
     </form>  
  </div>   
